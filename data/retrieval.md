@@ -1,0 +1,2 @@
+# Retrieval augmented generation
+Retrieval augmented generation (RAG) retrieves relevant passages from an external document collection before an LLM generates an answer. Chunking splits documents into smaller passages. Overlap preserves context across chunk boundaries. Source citations help users inspect the evidence. Retrieval does not guarantee that a generated answer is correct. Evaluate retrieval and answer quality separately.
