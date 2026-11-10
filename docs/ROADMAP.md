@@ -7,6 +7,7 @@
 - Extractive responses with source identifiers and retrieval scores.
 - Optional OpenAI generation from retrieved passages.
 - Retrieval-based abstention, unit tests, a smoke benchmark, and CI configuration.
+- Static browser interface with local uploads and Netlify build configuration.
 
 ## Semantic retrieval and API
 
@@ -14,7 +15,6 @@
 - Persist document chunks and vectors with versioned index metadata.
 - Preserve PDF page references during ingestion.
 - Add an HTTP API with validated request and response schemas.
-- Add a document search and question-answering interface.
 
 Acceptance: reproducible retrieval comparison, API integration tests, and source references that resolve to the indexed passages.
 

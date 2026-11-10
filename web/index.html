@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ask questions about your documents and inspect the source passages behind every result.">
+  <meta name="theme-color" content="#124f46">
+  <title>EvidenceDesk — Answers with sources</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="mark" aria-hidden="true">E</span>EvidenceDesk</a><span class="topnote">A little more evidence. A lot less guessing.</span><a class="github" href="https://github.com/ishanwork43-bit/evidencedesk" target="_blank" rel="noopener noreferrer">View on GitHub</a></header>
+  <main class="workspace">
+    <aside class="library" aria-label="Document library">
+      <div class="eyebrow">YOUR WORKSPACE</div>
+      <div class="library-title"><h2>Documents</h2><span id="document-count" class="count">0</span></div>
+      <p class="muted small">Your sources of truth, all in one place.</p>
+      <button id="upload" class="upload" disabled><span aria-hidden="true">＋</span> Add documents</button>
+      <input id="files" type="file" accept=".md,.txt" multiple hidden>
+      <p class="file-help">Markdown or text · up to 2 MB per file</p>
+      <ul id="documents" class="documents"></ul>
+      <div class="privacy"><span aria-hidden="true">◈</span><div><strong>Stays in your browser</strong><p>Added files are processed on this device and cleared when you refresh.</p></div></div>
+      <button id="reset" class="reset" disabled>Reset to sample documents</button>
+    </aside>
+    <section class="desk" aria-labelledby="headline">
+      <div class="heading"><div class="eyebrow">FROM DOCUMENTS TO UNDERSTANDING</div><h1 id="headline">Good answers start<br>with <em>good evidence.</em></h1><p>Ask a question. Find the relevant passages.<br>See exactly where the answer comes from.</p></div>
+      <form id="question-form" class="question-card">
+        <label for="question">What would you like to know?</label>
+        <textarea id="question" rows="3" maxlength="2000" placeholder="Ask about your documents…" required disabled></textarea>
+        <div class="question-footer"><span>Source passages, with citations</span><button id="ask" type="submit" disabled>Find evidence <span aria-hidden="true">→</span></button></div>
+      </form>
+      <div class="examples"><span>TRY A QUESTION</span><button class="example" disabled>What does ACID stand for?</button><button class="example" disabled>Why use chunk overlap in retrieval?</button><button class="example" disabled>How does TTL expire cache entries?</button></div>
+      <p id="status" role="status" aria-live="polite">Loading sample documents…</p>
+      <section id="results" hidden aria-labelledby="results-title"><div class="results-header"><h2 id="results-title">Evidence found</h2><span class="badge">DIRECT FROM YOUR SOURCES</span></div><div id="passages"></div><p class="results-note">These are retrieved excerpts, not a generated summary. Check the sources for full context.</p></section>
+      <div id="empty-state" class="empty-state"><span aria-hidden="true">⌕</span><div><strong>Every answer has a starting point.</strong><p>Your matching source passages will appear here.</p></div></div>
+      <footer>Built for curious minds. Grounded in your documents.</footer>
+    </section>
+  </main>
+</body>
+</html>
